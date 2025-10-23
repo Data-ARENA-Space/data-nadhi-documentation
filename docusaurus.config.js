@@ -121,10 +121,6 @@ const config = {
                 to: '/docs/architecture',
               },
               {
-                label: 'Setup Guide',
-                to: '/docs/setup',
-              },
-              {
                 label: 'Contribute',
                 to: '/contributions',
               },

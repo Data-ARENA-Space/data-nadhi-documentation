@@ -25,7 +25,7 @@ Temporal is used in Data Nadhi because it solves key challenges in workflow orch
 - Receives incoming log data.  
 - Validates the API key and identifies the organisation and project.  
 - Pushes tasks into Temporal’s `task-q` queue for processing.  
-- Refer [Server](/docs/architecture/server/index) for more info
+- Refer [Server](/docs/architecture/server) for more info
 
 ### 2. **Data Nadhi Main Worker**
 - Retrieves workflow configuration for each pipeline.  

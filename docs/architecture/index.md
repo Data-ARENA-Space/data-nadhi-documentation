@@ -24,7 +24,7 @@ Data Nadhi is composed of multiple independently deployable services that work t
 - On failure, the SDK logs the error (if enabled) after receiving a failure response from the server.
 - **Available SDKs:**
   - 🐍 [Python SDK](https://github.com/Data-ARENA-Space/data-nadhi-sdk/)
-- 📘 [Detailed SDK Architecture →](/docs/architecture/sdk/index)
+- 📘 [Detailed SDK Architecture →](/docs/architecture/sdk)
 
 ---
 
@@ -35,7 +35,7 @@ Data Nadhi is composed of multiple independently deployable services that work t
   - Verify if the requested pipeline is active.
   - Push log events to Temporal’s `task-q` queue.
 - 🗃️ [Repository](https://github.com/Data-ARENA-Space/data-nadhi-server/)  
-- 📘 [Detailed Server Architecture →](/docs/architecture/server/index)
+- 📘 [Detailed Server Architecture →](/docs/architecture/server)
 
 ---
 
