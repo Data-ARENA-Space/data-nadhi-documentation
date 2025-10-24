@@ -25,7 +25,7 @@ function HomepageHeader() {
           <Link
             className="button button--primary button--lg"
             to="/about">
-            Wanna hear a story? 📖
+            Why Data Nadhi? 📖
           </Link>
           <Link
             className="button button--secondary button--lg"

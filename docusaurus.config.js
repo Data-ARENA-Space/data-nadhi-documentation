@@ -72,7 +72,8 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-          {to: '/about', label: 'About', position: 'left'},
+          {to: '/story', label: 'Our Story', position: 'left'},
+          {to: '/about', label: 'Why Data Nadhi?', position: 'left'},
           {to: '/features', label: 'Features', position: 'left'},
           {to: '/contributions', label: 'Contribute', position: 'left'},
           {

@@ -25,7 +25,8 @@ Data Nadhi is an open-source data pipeline platform built on three core ideas:
 
 ## 🚀 Quick Links
 
-- **New to Data Nadhi?** Start with [Our Story](/about)
+- **Why Data Nadhi?** Check out [Why Data Nadhi is Different and Why It Matters](/about)
+- **New to Data Nadhi?** Start with [Our Story](/story)
 - **Want to understand the system?** Check out the [Architecture](/docs/architecture)
 - **Ready to contribute?** Visit the [Contributions Page](/contributions)
 - **Looking for features?** See [Features & Goals](/features)
