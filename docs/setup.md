@@ -50,7 +50,7 @@ It allows VS Code (or other compatible editors) to open your project inside a pr
 
 ## Steps to setup everything
 
-### 1. Docker Network
+### Docker Network
 
 **How?**
 - We’ll create a Docker network that connects all our containers.

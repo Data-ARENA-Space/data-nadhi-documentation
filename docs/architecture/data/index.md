@@ -7,22 +7,22 @@ Since we don't store raw log data permanently, we need way less storage than tra
 
 ---
 
-## 🗄️ Data Stores Used
+## Data Stores Used
 
-### 🍃 MongoDB
+### MongoDB
 - Stores **transactional data** like org info and pipeline workflow configs.  
 - Went with MongoDB because it's **schemaless** - gives us flexibility since we don't know the exact schema upfront in some entities.  
 - Most of the time we're doing **single-row reads** using indexed fields.  
 - Makes it easy to grab the core metadata we need quickly.
 - More details here: [Mongo DB for Data Nadhi](/docs/architecture/data/mongo)
 
-### ⚡ Redis Cache
+### Redis Cache
 - Used to **cache data at each stage** of the pipeline so things run near real-time.  
 - Redis is solid for fast, temporary storage.  
 - If the cache fails, the system keeps running fine - you just might get some cache misses. 
 - More details here: [Redis in Data Nadhi](/docs/architecture/data/redis)
 
-### 🐘 Postgres 
+### Postgres 
 - Not yet in use
 - Stores data for **analytics**.  
 - Has things like:
@@ -31,14 +31,14 @@ Since we don't store raw log data permanently, we need way less storage than tra
   - Start and completion timestamps  
 - Used for reporting and analyzing how your pipelines are running.
 
-### ☁️ MinIO
+### MinIO
 - Stores **failed records** until you do something about them.  
 - Picked MinIO because it's **compatible with Amazon S3** - makes migrating later way easier if needed. 
 - More details here: [MinIO in Data Nadhi](/docs/architecture/data/minio)
 
 ---
 
-## 🧩 Data Model
+## Data Model
 
 Here are the **main entities** in Data Nadhi and how they relate to each other:
 

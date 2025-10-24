@@ -13,7 +13,7 @@ It's designed to work smoothly with whatever logging system your language alread
 
 ---
 
-## 🧩 Core Components
+## Core Components
 
 ### Logger Utility
 - Uses the **default logging module** in each language - no custom framework needed.
@@ -49,7 +49,7 @@ It's designed to work smoothly with whatever logging system your language alread
 
 ---
 
-## ⚙️ Architecture Flow
+## Architecture Flow
 The SDK works in three main stages:
 1. Initialization (on application load)
     - Initializes the logger.
@@ -69,21 +69,21 @@ The SDK works in three main stages:
 
 ---
 
-## 🚨 Error Handling
+## Error Handling
 - Failed requests or timeouts get logged to stdout (if you have that enabled).
 - Invalid API keys or messed up log configs will raise descriptive errors during initialization.
 - Network issues won't interrupt your main application — the SDK safely falls back to local logging.
 
 ---
 
-## 🌍 Supported Languages
+## Supported Languages
 ### Python SDK
 - **Repository:** [data-nadhi-sdk](https://github.com/Data-ARENA-Space/data-nadhi-sdk)
 - Uses threading for asynchronous log sending to the server.
 
 ---
 
-## 🧱 Extending the SDK
+## Extending the SDK
 If you want to implement the SDK in other languages:
 - Follow the same **initialization → log traversal → async send pattern**.
 - Use the same **log config schema** and **API key validation** logic.

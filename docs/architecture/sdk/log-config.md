@@ -82,7 +82,7 @@ There's a top-level key called `rules` so we can extend the config later (global
 
 ## Some common examples
 
-### 1️⃣ Just log `INFO` and `ERROR` always to `stdout`
+### 1. Just log `INFO` and `ERROR` always to `stdout`
 
 ```yaml
 rules:
@@ -101,7 +101,7 @@ Logs both INFO and ERROR messages to the console, ignoring everything else.
 
 ---
 
-### 2️⃣ Send only application errors to a pipeline
+### 2. Send only application errors to a pipeline
 
 ```yaml
 rules:
@@ -120,7 +120,7 @@ Logs from the `user-service` app with level `ERROR` are sent to the `user-error-
 
 ---
 
-### 3️⃣ Match nested data and log warnings to both stdout and pipeline
+### 3. Match nested data and log warnings to both stdout and pipeline
 
 ```yaml
 rules:
@@ -140,7 +140,7 @@ Triggers when the status code is `429` (too many requests) and level is `WARN`.
 
 ---
 
-### 4️⃣ Using Regex for pattern-based matching
+### 4. Using Regex for pattern-based matching
 
 ```yaml
 rules:
@@ -159,7 +159,7 @@ This rule catches any log messages containing “login failed” or “invalid c
 
 ---
 
-### 5️⃣ Using multiple rules together
+### 5. Using multiple rules together
 
 ```yaml
 rules:
@@ -185,7 +185,7 @@ Here:
 
 ---
 
-### 6️⃣ Fallback rule (catch all)
+### 6. Fallback rule (catch all)
 
 ```yaml
 rules:
@@ -201,7 +201,7 @@ Useful during local development or debugging.
 
 ---
 
-## ✅ Summary
+## Summary
 - Log Config gives fine-grained control over what gets logged and where.
 - Supports deep nested condition checks.
 - Can handle simple if-else style configs or complex multi-pipeline routing.

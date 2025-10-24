@@ -1,4 +1,4 @@
-# 🔄 Transformation Temporal Workflow
+# Transformation Temporal Workflow
 
 The **TransformationWorkflow** in Data Nadhi processes logs through your user-defined pipeline nodes.  
 It applies transformations, evaluates conditions, and routes data to downstream destinations via **DestinationWorkflow**.
@@ -7,7 +7,7 @@ It applies transformations, evaluates conditions, and routes data to downstream 
 
 ---
 
-## ⚙️ Overview
+## Overview
 
 This workflow gets triggered as a **child workflow** of `MainWorkflow` on Temporal's **task queue**.  
 It processes logs according to your pipeline config, handling multiple nodes and branching logic while keeping metadata and traceability.
@@ -16,7 +16,7 @@ It processes logs according to your pipeline config, handling multiple nodes and
 
 ---
 
-## 🧩 Workflow Steps
+## Workflow Steps
 
 ### 1. Receive Input
 Input payload has:
@@ -60,7 +60,7 @@ Input payload has:
 
 ---
 
-## 🚨 Failure Handling with MinIO
+## Failure Handling with MinIO
 
 All activity failures get logged to **MinIO** to keep traceability without stopping the workflow.  
 The logs include:
@@ -70,14 +70,14 @@ The logs include:
 
 ---
 
-## 📊 Node Outputs
+## Node Outputs
 - Each node may produce multiple outputs during workflow execution
 - Outputs are stored in node_outputs dictionary keyed by node ID
 - Provides a complete record of all transformations and conditional branches
 
 ---
 
-## 🔍 Detailed Logic of Activities
+## Detailed Logic of Activities
 
 ### `transform` Activity
 
@@ -227,7 +227,7 @@ The `filters` activity is used for **branching and conditional routing** between
 
 ---
 
-## ✅ TransformationWorkflow Summary
+## TransformationWorkflow Summary
 
 The **TransformationWorkflow** handles detailed node-level processing of logs:  
 

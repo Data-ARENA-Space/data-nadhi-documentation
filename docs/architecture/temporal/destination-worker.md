@@ -1,4 +1,4 @@
-# 📦 Destination Workflow
+# Destination Workflow
 
 The **DestinationWorkflow** in Data Nadhi handles the final step: delivering processed logs to their intended destinations.  
 It gets data from the **TransformationWorkflow** and makes sure everything integrates properly with external systems.
@@ -7,7 +7,7 @@ It gets data from the **TransformationWorkflow** and makes sure everything integ
 
 ---
 
-## ⚙️ Overview
+## Overview
 
 This workflow gets triggered as a **child workflow** from the **TransformationWorkflow**.  
 It fetches the **integration targets and connector configs** you need, and sends the data to the destination.
@@ -16,7 +16,7 @@ It fetches the **integration targets and connector configs** you need, and sends
 
 ---
 
-## 🧩 Workflow Steps
+## Workflow Steps
 
 ### 1. Fetch Integration Target
 Activity: `fetch_integration_target`  
@@ -54,7 +54,7 @@ Activity: `send_to_destination`
 
 ---
 
-## 🚨 Failure Handling
+## Failure Handling
 
 All activity failures get logged to **MinIO**. Each log includes:
 - Exception type and message  
@@ -66,7 +66,7 @@ This keeps things transparent and makes troubleshooting easier if there are deli
 
 ---
 
-## ✅ Summary
+## Summary
 
 The **DestinationWorkflow** guarantees reliable delivery of processed logs to external systems by:
 - Validating targets and connectors before sending  

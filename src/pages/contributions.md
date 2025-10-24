@@ -1,4 +1,4 @@
-# 🙌 Contributing to Data Nadhi
+# Contributing to Data Nadhi
 
 Thanks for thinking about contributing! Data Nadhi is a community-driven project, and every contribution — big or small — makes a difference.
 
@@ -6,7 +6,7 @@ All repos are set up with **development containers (Dev Containers)**, so you ca
 
 ---
 
-## 🚀 How to Contribute
+## How to Contribute
 
 You can contribute in a few ways:
 
@@ -33,7 +33,7 @@ You can contribute in a few ways:
 
 ---
 
-## 🧰 Guidelines for Contributors
+## Guidelines for Contributors
 
 - **Be Respectful:** Be kind and professional in your interactions.  
 - **Write Clear Commits:** Use descriptive commit messages (`fix: ...`, `feat: ...`, `docs: ...`).  
@@ -42,7 +42,7 @@ You can contribute in a few ways:
 
 ---
 
-## 🔧 Setting Up Your Local Development Environment
+## Setting Up Your Local Development Environment
 
 Data Nadhi uses **Dev Containers**, which give you a fully-configured environment for development.  
 
@@ -58,7 +58,7 @@ Data Nadhi uses **Dev Containers**, which give you a fully-configured environmen
 
 ---
 
-## 🎉 Thank You
+## Thank You
 
 Contributors are the backbone of Data Nadhi. Every PR, issue, suggestion, or discussion makes the project stronger.  
 

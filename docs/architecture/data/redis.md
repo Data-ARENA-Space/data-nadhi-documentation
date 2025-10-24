@@ -5,7 +5,7 @@ This doc explains **why we chose Redis** and how the cache keys are structured.
 
 ---
 
-## ⚡ Why Redis?
+## Why Redis?
 
 Redis fits the **high-performance, low-latency needs** of Data Nadhi:
 
@@ -19,11 +19,11 @@ Redis fits the **high-performance, low-latency needs** of Data Nadhi:
 
 ---
 
-## 🧩 Connection Management & Singleton Pattern
+## Connection Management & Singleton Pattern
 
 Both the **Python** temporal workers and **Node.js** server use a **singleton-based Redis connection manager** to keep the cache layer lightweight and resilient.
 
-### 🔁 Singleton Pattern
+### Singleton Pattern
 The Redis client uses a **singleton design** - only **one connection instance** exists for the entire service process.  
 When a component requests Redis access:
 - If a client is already active, it gets reused.  
@@ -31,20 +31,20 @@ When a component requests Redis access:
 
 This avoids unnecessary reconnections, keeps connection usage predictable, and makes Redis operations super fast.
 
-### ⚙️ Connection Handling
+### Connection Handling
 The connection layer is designed for **stability** without letting cache failures mess with the core workflow:
 - **Non-blocking reconnection:** If Redis disconnects, the service tries a single reconnection in the background without stopping the main process.  
 - **No hard retry loops:** Cache failures get logged, but the system keeps running normally using MongoDB as the fallback.  
 - **Silent failure mode:** All cache operations (`safe_get`, `safe_set`, `del`) fail silently if Redis is unavailable — this guarantees caching never breaks the data flow.  
 - **Connection monitoring:** The client logs key events like connection loss, recovery, and ping failures through the shared `Logger` utility.  
 
-### ⚡ Optimized Cache Access
+### Optimized Cache Access
 Both languages have *safe wrappers* (`safe_get` and `safe_set`) that automatically:
 - Check connection health using a lightweight `PING`.  
 - Try a single reconnect if needed.  
 - Only execute cache operations when the connection is confirmed healthy.  
 
-### 🧠 Result
+### Result
 This makes Redis usage:
 - **Fast** — single shared client, minimal latency.  
 - **Safe** — never blocks main operations due to cache failures.  
@@ -54,7 +54,7 @@ This makes Redis usage:
 
 ---
 
-## 🔑 Cache Key Structure
+## Cache Key Structure
 
 Cache keys in Data Nadhi are **structured hierarchically** to match the relationships between orgs, projects, and pipelines:
 

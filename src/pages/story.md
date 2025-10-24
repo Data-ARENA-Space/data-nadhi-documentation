@@ -3,7 +3,7 @@ Every project has a story. This one might not be super dramatic, but it's real. 
 
 ---
 
-## 🚀 The Beginning
+## The Beginning
 After **3 years as a Full Stack Developer**, I decided to follow my passion for **data architecture** and switched to **Data Engineering**.  
 
 But one question kept bugging me:  
@@ -30,7 +30,7 @@ And that's how **Data Nadhi** was born: a platform that flows data from logs to 
 
 ---
 
-## 🌟 The Vision
+## The Vision
 The goal is clear: make **Data Nadhi** the platform that **simplifies and unifies data pipelines**, taking away the complexity of managing them.  
 
 In the future, it should:  
@@ -40,7 +40,7 @@ In the future, it should:
 
 ---
 
-## 🛠 The Journey
+## The Journey
 ### Phase 0: Proof of Concept
 The PoC is ready! The **backend works end-to-end locally** in a **fully containerized setup** - which means it's **production-ready**.  
 

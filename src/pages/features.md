@@ -1,10 +1,10 @@
-# ⚡ Features & Goals
+# Features & Goals
 
 Data Nadhi is built on **three core principles** that guide everything we do — plus a hidden one for trust and security. **_What's mentioned below is the future state of the platform, not where it currently is_**
 
 ---
 
-## 🎯 Principle 1: Direct (the verb, not the adjective)  
+## Principle 1: Direct (the verb, not the adjective)  
 **Connect the Logs**  
 
 Data should flow **wherever you want**, and the path should be fully configurable. Here’s what we're aiming for:  
@@ -22,7 +22,7 @@ Data should flow **wherever you want**, and the path should be fully configurabl
 
 ---
 
-## 🔄 Principle 2: Transform  
+## Principle 2: Transform  
 **Shape the Data**  
 
 Data Nadhi lets you transform your logs into **any structure you need** for your destinations.  
@@ -31,7 +31,7 @@ Data Nadhi lets you transform your logs into **any structure you need** for your
 - **Type Configurations:** Validate input/output types to avoid runtime exceptions.  
 - **JSON-First Transformation:** Work with JSON natively and only convert when necessary.  
 
-### 🔄 Goals for Transform
+### 🎯 Goals for Transform
 - **Visual transformation builder** for easier pipeline design.  
 - Extensible support for **different data formats**.  
 - **Validation at every step** to make sure data stays clean.  
@@ -39,7 +39,7 @@ Data Nadhi lets you transform your logs into **any structure you need** for your
 
 ---
 
-## 📦 Principle 3: Deliver  
+## Principle 3: Deliver  
 **Stream to Any Target**  
 
 You own the data. Data Nadhi makes sure it reaches **any destination reliably and in the format it needs**.  
@@ -49,7 +49,7 @@ You own the data. Data Nadhi makes sure it reaches **any destination reliably an
 - **Format Conversion:** Deliver in whatever format your destination needs.  
 - **Guaranteed Delivery:** Critical data gets **exactly-once semantics**.  
 
-### 📦 Goals for Deliver
+### 🎯 Goals for Deliver
 - Support for as many **destination connectors** as possible.  
 - **Exactly-once delivery** for critical logs.  
 - Single log to multiple **data stores or alerting channels**.  

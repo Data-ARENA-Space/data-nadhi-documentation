@@ -8,13 +8,13 @@ The system is built to be **stateless**, **heavily cached**, and **fault-toleran
 
 ---
 
-## 🧩 Overview
+## Overview
 
 ![Data Nadhi Server](/img/docs/server.svg)
 
 ---
 
-## ⚙️ Core Responsibilities
+## Core Responsibilities
 
 - Authenticate SDK requests using org-level secrets.  
 - Fetch and validate project and pipeline configs.  
@@ -25,7 +25,7 @@ The system is built to be **stateless**, **heavily cached**, and **fault-toleran
 
 ---
 
-## ⚡ Extensive Use of Caching
+## Extensive Use of Caching
 
 Caching is a huge part of the server architecture.  
 Almost every data access path — like fetching org secrets, project configs, or pipeline definitions — gets served from cache first.
@@ -40,12 +40,12 @@ This read-through and write-back pattern makes sure:
 - Secrets and configs are instantly accessible.  
 - Server latency stays consistently low, even under high load.
 
-🧠 **In short:**  
+**In short:**  
 Every piece of reusable data flows through the cache before hitting the database.
 
 ---
 
-## 🔁 Request Processing Flow
+## Request Processing Flow
 
 The processing is divided into two main parts — **Sync Flow** (validation and acknowledgment) and **Async Flow** (background processing via Temporal).
 
@@ -74,7 +74,7 @@ pipeline-level > project-level > org-level > default
 
 ---
 
-## 🚨 Exception Handling
+## Exception Handling
 
 The server uses a two-tiered error handling approach:
 
@@ -90,7 +90,7 @@ The server uses a two-tiered error handling approach:
 
 ---
 
-## 🧱 Data Access and Structure
+## Data Access and Structure
 
 Data is accessed through well-defined keys that uniquely represent each resource:
 
@@ -102,7 +102,7 @@ Data is accessed through well-defined keys that uniquely represent each resource
 
 ---
 
-## ✅ Summary
+## Summary
 
 The **Data Nadhi Server** works as a secure, high-performance orchestrator between SDKs and the Temporal processing engine.  
 It achieves **speed and reliability** by:

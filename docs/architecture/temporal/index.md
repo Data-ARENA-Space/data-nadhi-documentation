@@ -5,7 +5,7 @@ Temporal gives us **reliability, scalability, and fault tolerance** - perfect fo
 
 ---
 
-## 🔄 Why Temporal?
+## Why Temporal?
 
 We use Temporal in Data Nadhi because it solves key challenges in workflow orchestration:
 
@@ -19,7 +19,7 @@ We use Temporal in Data Nadhi because it solves key challenges in workflow orche
 
 ---
 
-## 🏗️ Temporal Workflow Integration
+## Temporal Workflow Integration
 
 ### 1. **Data Nadhi Server**
 - Receives incoming log data.  
@@ -47,7 +47,7 @@ We use Temporal in Data Nadhi because it solves key challenges in workflow orche
 
 ---
 
-## 🧱 Temporal Architecture Overview
+## Temporal Architecture Overview
 
 - **Temporal Service:** Coordinates workflow execution and makes sure everything's durable.  
 - **Workers:** Application-side processes that execute tasks defined in workflows.  
@@ -58,7 +58,7 @@ We use Temporal in Data Nadhi because it solves key challenges in workflow orche
 
 ---
 
-## ✅ Benefits of Using Temporal
+## Benefits of Using Temporal
 
 - **Reliability:** Makes sure workflows complete even when there are failures.  
 - **Scalability:** Can handle high loads by adding more workers.  

@@ -1,4 +1,4 @@
-# 🧠 Main Temporal Workflow
+# Main Temporal Workflow
 
 The **MainWorkflow** in Data Nadhi handles the first phase of pipeline execution.  
 It fetches pipeline and workflow configs and then triggers the **TransformationWorkflow**.
@@ -7,7 +7,7 @@ It fetches pipeline and workflow configs and then triggers the **TransformationW
 
 ---
 
-## ⚙️ Overview
+## Overview
 
 The workflow listens to Temporal's **task queue** and starts whenever a new log or event shows up.  
 It validates required metadata like `organisationId`, `projectId`, and `pipelineId` before moving forward.
@@ -16,7 +16,7 @@ It validates required metadata like `organisationId`, `projectId`, and `pipeline
 
 ---
 
-## 🧩 Workflow Steps
+## Workflow Steps
 
 ### 1. Receive Input
 Input payload has:
@@ -55,7 +55,7 @@ If workflow creation fails, a failure gets logged to **MinIO** and the workflow 
 
 ---
 
-## 🚨 Failure Handling with MinIO
+## Failure Handling with MinIO
 
 All workflow or activity failures get logged to **MinIO** for traceability.  
 The failure logs include:
@@ -66,7 +66,7 @@ The failure logs include:
 
 ---
 
-## ✅ Summary
+## Summary
 
 The **MainWorkflow** in Data Nadhi handles the first phase of log processing:  
 

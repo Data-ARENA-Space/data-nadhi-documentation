@@ -5,7 +5,7 @@ This doc explains **why we chose MongoDB** and gives you an overview of the main
 
 ---
 
-## 🍃 Why MongoDB?
+## Why MongoDB?
 
 MongoDB fits well with the **flexible and dynamic nature** of Data Nadhi's metadata and workflow configs:
 
@@ -19,11 +19,11 @@ MongoDB fits well with the **flexible and dynamic nature** of Data Nadhi's metad
 
 ---
 
-## ⚙️ Connection Management & Singleton Pattern
+## Connection Management & Singleton Pattern
 
 Both the **Python** temporal workers and **Node.js** server uses a **singleton-based MongoDB connection manager**.
 
-### 🧩 Singleton Pattern
+### Singleton Pattern
 The Mongo connection manager uses a **singleton design** - meaning only **one instance** of the Mongo client exists for the entire service lifecycle.  
 This avoids having multiple redundant connections and makes sure all database operations share a single, pooled client.
 
@@ -36,14 +36,14 @@ This approach gives us:
 - Controlled connection pooling with minimal resource overhead.
 - Simpler health checking and reconnection logic.
 
-### 🌐 Connection Handling
+### Connection Handling
 The connection layer does several built-in checks and protections:
 - **Health verification:** Each access triggers a lightweight `ping` to make sure the connection is alive.  
 - **Automatic reconnection:** If the `ping` fails, the service tries a single reconnect before raising an error.  
 - **Connection pooling:** Clients are configured with bounded pool sizes (min/max), socket timeouts, and retry behavior for reads/writes.  
 - **Centralized logging:** Any failure to connect, ping, or reconnect gets logged through the standard `Logger` utility.  
 
-### 🧠 Result
+### Result
 This makes MongoDB access:
 - **Reliable** — automatically recovers from transient disconnections.  
 - **Efficient** — reuses connections instead of repeatedly opening and closing them.  
@@ -53,7 +53,7 @@ This makes MongoDB access:
 
 ---
 
-## 🗂️ Collections Schema Overview
+## Collections Schema Overview
 
 ### Organisations
 Represents an org or individual using the platform:

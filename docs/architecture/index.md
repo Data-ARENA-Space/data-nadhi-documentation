@@ -5,7 +5,7 @@ This doc gives you the high-level view and links to detailed pages for each comp
 
 ---
 
-## 🏗️ High-Level Architecture
+## High-Level Architecture
 
 Data Nadhi is made up of multiple services that can be deployed independently. They work together to ingest, process, and deliver data wherever it needs to go.
 
@@ -13,9 +13,9 @@ Data Nadhi is made up of multiple services that can be deployed independently. T
 
 ---
 
-## 📦 Core Components
+## Core Components
 
-### 🧩 Data Nadhi SDK
+### Data Nadhi SDK
 - Built as **language-specific SDKs** - each language gets its own repo.
 - Captures logs from your app and sends them securely to the Data Nadhi Server.
 - You'll need:
@@ -23,65 +23,65 @@ Data Nadhi is made up of multiple services that can be deployed independently. T
   - **Log Config** to decide which logs go to stdout and which go to the server
 - If something fails, the SDK logs the error (if you have that enabled) after getting a failure response from the server.
 - **Available SDKs:**
-  - 🐍 [Python SDK](https://github.com/Data-ARENA-Space/data-nadhi-sdk/)
-- 📘 [Detailed SDK Architecture →](/docs/architecture/sdk)
+  - [Python SDK](https://github.com/Data-ARENA-Space/data-nadhi-sdk/)
+- [Detailed SDK Architecture →](/docs/architecture/sdk)
 
 ---
 
-### ⚙️ Data Nadhi Server
+### Data Nadhi Server
 - A **Node.js-based API server** built to scale horizontally.
 - What it does:
   - Validates your API Key and figures out which org/project you're working with
   - Checks if the pipeline you want is actually active
   - Pushes log events to Temporal's `task-q` queue
-- 🗃️ [Repository](https://github.com/Data-ARENA-Space/data-nadhi-server/)  
-- 📘 [Detailed Server Architecture →](/docs/architecture/server)
+- [Repository](https://github.com/Data-ARENA-Space/data-nadhi-server/)  
+- [Detailed Server Architecture →](/docs/architecture/server)
 
 ---
 
-### 🔄 Data Nadhi Main Worker
+### Data Nadhi Main Worker
 - Grabs the workflow config for each pipeline and sets it up in a way that can be traversed.
 - Figures out which node to start from and pushes tasks to Temporal's `task-q-transform`.
-- 🗃️ [Repository](https://github.com/Data-ARENA-Space/data-nadhi-temporal-worker/)  
-- 📘 [Detailed Overview →](/docs/architecture/temporal/main-worker)
+- [Repository](https://github.com/Data-ARENA-Space/data-nadhi-temporal-worker/)  
+- [Detailed Overview →](/docs/architecture/temporal/main-worker)
 
 ---
 
-### 🧠 Data Nadhi Transformation Worker
+### Data Nadhi Transformation Worker
 - Goes through the workflow config and applies transformations to your data.
 - Handles different types of nodes:
   - `transform` nodes for changing data
   - `conditional-branch` nodes for routing
   - `end` nodes for pushing the transformed data to Temporal's `task-q-destination`.
-- 🗃️ [Repository](https://github.com/Data-ARENA-Space/data-nadhi-temporal-worker/)  
-- 📘 [Detailed Overview →](/docs/architecture/temporal/transformation-worker)
+- [Repository](https://github.com/Data-ARENA-Space/data-nadhi-temporal-worker/)  
+- [Detailed Overview →](/docs/architecture/temporal/transformation-worker)
 
 ---
 
-### 🚚 Data Nadhi Destination Worker
+### Data Nadhi Destination Worker
 - Gets the destination and connector configs you've set up.
 - Picks the right **destination sender engine** for the job.
 - Sends your processed data to wherever it needs to go (databases, APIs, etc.).
-- 🗃️ [Repository](https://github.com/Data-ARENA-Space/data-nadhi-temporal-worker/)  
-- 📘 [Detailed Overview →](/docs/architecture/temporal/destination-worker)
+- [Repository](https://github.com/Data-ARENA-Space/data-nadhi-temporal-worker/)  
+- [Detailed Overview →](/docs/architecture/temporal/destination-worker)
 
 ---
 
-## 🧰 Utility Components
+## Utility Components
 
-### 🧱 Data Nadhi Dev
+### Data Nadhi Dev
 - Has everything you need for the **development environment** using Dev Containers.
 - Includes:
   - `docker-compose` with shared storage and all the infrastructure
   - Migration scripts for **MongoDB** and **Postgres**
-- 🗃️ [Repository](https://github.com/Data-ARENA-Space/data-nadhi-dev/)
+- [Repository](https://github.com/Data-ARENA-Space/data-nadhi-dev/)
 
 ---
 
-### 🧩 Data Nadhi Internal Server
+### Data Nadhi Internal Server
 - A lightweight server for **intermediate operations** that the UI usually handles.
 - Makes testing easier when you don't have the frontend running.
-- 🗃️ [Repository](https://github.com/Data-ARENA-Space/data-nadhi-internal-server/)
+- [Repository](https://github.com/Data-ARENA-Space/data-nadhi-internal-server/)
 
 ---
 

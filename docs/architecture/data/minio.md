@@ -5,7 +5,7 @@ We picked MinIO because it's **S3-compatible**, lightweight, and makes it easy t
 
 ---
 
-## ☁️ Why MinIO?
+## Why MinIO?
 
 - **Failure handling:** Stores logs that fail during processing so you don't lose data.  
 - **S3-compatible:** Easy to switch to AWS S3 or other compatible storage down the line.  
@@ -16,7 +16,7 @@ We picked MinIO because it's **S3-compatible**, lightweight, and makes it easy t
 
 ---
 
-## 🗂️ Failure Log Schema
+## Failure Log Schema
 
 Each failure log is stored as a **JSON object** in MinIO. They're organized in folders based on org, project, pipeline, and message IDs.  
 
@@ -38,7 +38,7 @@ Each failure log is stored as a **JSON object** in MinIO. They're organized in f
 
 ---
 
-## 🏗️ Storage Structure
+## Storage Structure
 
 - **Folder hierarchy:** `<organisationId>/<projectId>/<pipelineId>/<messageId>/`  
 - **Filename:** `<activity_name>-<timestamp>.json`  

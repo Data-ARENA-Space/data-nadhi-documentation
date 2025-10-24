@@ -5,7 +5,7 @@ It uses **three layers of AES-GCM encryption** to tightly bind each key to its *
 
 ---
 
-## 🧩 Overview
+## Overview
 
 Each API Key is unique to a specific **org** and **project**.  
 It's built using:
@@ -18,7 +18,7 @@ It's built using:
 
 ---
 
-## 🔐 Step-by-Step Key Creation
+## Step-by-Step Key Creation
 
 Here's how an API Key gets created:
 
@@ -51,7 +51,7 @@ apiKey = base64(enc3)
 ```
 ---
 
-## 🧔 Step-by-Step Key Validation
+## Step-by-Step Key Validation
 
 When the SDK sends a request with the header `x-datanadhi-api-key`:
 
@@ -77,9 +77,9 @@ When the SDK sends a request with the header `x-datanadhi-api-key`:
 
 Data Nadhi uses **AES-GCM (Advanced Encryption Standard – Galois/Counter Mode)** for all encryption and decryption.
 
-📘 Learn more: [AES-GCM Explained (Wikipedia)](https://en.wikipedia.org/wiki/Galois/Counter_Mode)
+**Learn more:** [AES-GCM Explained (Wikipedia)](https://en.wikipedia.org/wiki/Galois/Counter_Mode)
 
-### 🧠 How It Works (In Simple Terms)
+### How It Works (In Simple Terms)
 - Think of AES-GCM as a **safe box** with a **unique key** (the secret) and a **seal** (the GCM part).  
 - When you encrypt something, AES locks it using the key and stamps it with a verification tag.  
 - When decrypting, it checks that stamp — if even a single character was changed, decryption fails.  
@@ -88,7 +88,7 @@ Data Nadhi uses **AES-GCM (Advanced Encryption Standard – Galois/Counter Mode)
 
 ---
 
-## ⚙️ Error Handling
+## Error Handling
 
 If the API Key:
 - Is missing  
@@ -101,7 +101,7 @@ No sensitive info gets exposed.
 
 ---
 
-## ⚡ Caching Behavior
+## Caching Behavior
 
 - **Valid API Keys** get cached with their org/project IDs for quick access.  
 - **Invalid keys** get cached briefly to prevent repeated validation attempts.  
@@ -109,7 +109,7 @@ No sensitive info gets exposed.
 
 ---
 
-## ✅ Summary
+## Summary
 
 - Multi-layer AES-GCM encryption secures every API Key.  
 - Org and project secrets are stored encrypted.  
