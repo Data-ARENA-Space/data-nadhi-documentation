@@ -1,27 +1,66 @@
-# Data Nadhi Documentation
+# 🌊 Data Nadhi
 
-> **Direct. Transform. Deliver.**
+**Data Nadhi** is an open-source platform that helps you manage the flow of data starting from your application logs all the way to your desired destinations — databases, APIs, or alerting systems.
 
-Docs for Data Nadhi - an open-source data pipeline platform that handles your data from logs to destination.
+> **Direct. Transform. Deliver.**  
+> Flow your logs, trigger your pipelines.
 
-## 🌊 About Data Nadhi
+---
 
-Data Nadhi handles the complete pipeline flow starting from your application logs all the way to any destination you want:
+## 🧠 What is Data Nadhi?
 
-- **Direct**: Get data from your application logs and various sources into the system
-- **Transform**: Apply flexible transformations to your data using Temporal workflows
-- **Deliver**: Send the processed data to multiple destinations reliably, with built-in monitoring
+Data Nadhi provides a unified platform to **ingest, transform, and deliver** data — powered by **Temporal**, **MongoDB**, **Redis**, and **MinIO**.
 
-These docs will help you understand how Data Nadhi works, get it set up, and contribute if you want to.
+It connects easily with your applications using the **Data Nadhi SDK**, and gives you full control over how data moves across your system.
 
-## 📚 What's Inside
+### Core Concept
+- **Direct** – Collect logs and data from your applications or external sources.  
+- **Transform** – Use Temporal workflows to apply filters, enrichments, or custom transformations.  
+- **Deliver** – Send the final processed data to any configured destination — all handled reliably and asynchronously.
 
-Built with [Docusaurus](https://docusaurus.io/), this site includes:
+Data Nadhi is designed to be **modular**, **developer-friendly**, and **ready for production**.
 
-- **Architecture Documentation**: Detailed breakdown of how the system is designed and how components interact with each other
-- **Setup Guides**: Step-by-step instructions to get Data Nadhi running locally
-- **API References**: Complete API documentation for the services
-- **Integration Guides**: How to integrate Data Nadhi into your existing applications (Once everything is up in docker)
+---
+
+## 🏗️ System Overview
+
+The platform is built from multiple services and tools working together:
+
+| Component | Description |
+|------------|-------------|
+| [**data-nadhi-server**](https://github.com/Data-ARENA-Space/data-nadhi-server) | Handles incoming requests from the SDK and passes them to Temporal. |
+| [**data-nadhi-internal-server**](https://github.com/Data-ARENA-Space/data-nadhi-internal-server) | Internal service for managing entities, pipelines, and configurations. |
+| [**data-nadhi-temporal-worker**](https://github.com/Data-ARENA-Space/data-nadhi-temporal-worker) | Executes workflow logic and handles transformations and delivery. |
+| [**data-nadhi-sdk**](https://github.com/Data-ARENA-Space/data-nadhi-sdk) | Python SDK for logging and sending data from applications. |
+| [**data-nadhi-dev**](https://github.com/Data-ARENA-Space/data-nadhi-dev) | Local environment setup using Docker Compose for databases and Temporal. |
+| [**data-nadhi-documentation**](https://github.com/Data-ARENA-Space/data-nadhi-documentation) | Documentation site built with Docusaurus (you’re here now). |
+
+All components are connected through a shared Docker network, making local setup and development simple.
+
+---
+
+## ⚙️ Features
+
+- 🧩 **Unified Pipeline** – Move data seamlessly from logs to destinations  
+- ⚙️ **Custom Transformations** – Define your own transformations using Temporal  
+- 🔄 **Reliable Delivery** – Retries, fault tolerance, and monitoring built in  
+- 🧠 **Easy Integration** – Simple SDK-based setup for applications  
+- 💡 **Developer Focused** – Dev containers and Docker-first setup for consistency  
+
+---
+
+## 📚 What's Inside this repository
+
+Built using [Docusaurus](https://docusaurus.io/), this site includes:
+
+- **Architecture Documentation** – A detailed breakdown of all components and their interactions  
+- **Setup Guides** – Step-by-step instructions to get Data Nadhi running locally  
+- **API References** – Documentation for the various services and endpoints  
+- **Integration Guides** – Instructions to connect Data Nadhi with your existing applications  
+
+> This repository hosts the official documentation for the entire Data Nadhi ecosystem.
+
+---
 
 ## 🚀 Quick Start
 
@@ -54,75 +93,11 @@ Build the static site for production:
 npm run build
 ```
 
-This generates all the static content and puts it in the `build` directory.
-
-### Deployment
-
-The docs are hosted on Cloudflare Pages. Any push to the main branch automatically triggers a deployment.
-
-## 🏗️ Data Nadhi Repositories
-
-Data Nadhi is split across multiple repos, each handling a specific part:
-
-### Core Services
-
-- **[data-nadhi-server](https://github.com/Data-ARENA-Space/data-nadhi-server)**  
-  The API server that handles authentication for the request from SDK and pushing to temporal
-
-- **[data-nadhi-internal-server](https://github.com/Data-ARENA-Space/data-nadhi-internal-server)**  
-  Internal service that temporarily replaces the UI that will help with creating pipeline nodes and other entities
-
-- **[data-nadhi-temporal-worker](https://github.com/Data-ARENA-Space/data-nadhi-temporal-worker)**  
-  This is a set of 3 workers, that are responsible for the code data pipeline traversal with the log data
-
-### SDKs & Tools
-
-- **[data-nadhi-sdk](https://github.com/Data-ARENA-Space/data-nadhi-sdk)**  
-  Python SDK for integrating Data Nadhi into your applications - The logging SDK
-
-- **[data-nadhi-dev](https://github.com/Data-ARENA-Space/data-nadhi-dev)**  
-  Development environment setup with Docker Compose, includes all the infrastructure you need in your local
-
-### Documentation
-
-- **[data-nadhi-documentation](https://github.com/Data-ARENA-Space/data-nadhi-documentation)** (this repo)  
-  This documentation site with architecture guides, setup instructions, and API references
-
-## 🤝 Contributing
-
-Contributions are always welcome! Here's how you can help:
-
-1. **Documentation**: Found a typo or something that could be explained better? Go ahead and edit it.
-2. **Examples**: Add more examples and use cases that could help others.
-3. **Issues**: Report bugs or suggest improvements through GitHub Issues.
-
-### Making Changes
-
-1. Fork this repo
-2. Create a branch: `git checkout -b feature/your-feature-name`
-3. Make your changes
-4. Test locally with `npm start`
-5. Submit a pull request
-
-## 📝 Documentation Structure
-
-```
-docs/
-├── index.md                 # Introduction
-├── architecture/            # System architecture
-│   ├── index.md
-│   ├── server/             # Main server architecture
-│   ├── temporal/           # Temporal worker architecture
-│   ├── sdk/                # SDK architecture
-│   └── data/               # Data layer (MongoDB, Redis, MinIO)
-└── setup/                   # Setup and installation guides
-```
-
 ## 🔗 Links
 
-- **Live Documentation**: [https://docs.datanadhi.com](https://docs.datanadhi.com)
-- **GitHub Organization**: [Data-ARENA-Space](https://github.com/Data-ARENA-Space)
 - **Main Website**: [https://datanadhi.com](https://datanadhi.com)
+- **Documentation**: [https://docs.datanadhi.com](https://docs.datanadhi.com)
+- **GitHub Organization**: [Data-ARENA-Space](https://github.com/Data-ARENA-Space)
 
 ## 📄 License
 
