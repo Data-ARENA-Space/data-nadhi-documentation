@@ -131,5 +131,5 @@ This project is open source and available under the [GNU Affero General Public L
 ## 💬 Community
 
 - **GitHub Discussions**: [Coming soon]
-- **Discord**: [Coming soon]
+- **Discord**: [Data Nadhi Community](https://discord.gg/gMwdfGfnby)
 - **Issues**: [GitHub Issues](https://github.com/Data-ARENA-Space/data-nadhi-documentation/issues)

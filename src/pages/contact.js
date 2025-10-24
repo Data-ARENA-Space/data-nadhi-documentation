@@ -132,7 +132,7 @@ export default function Contact() {
                       Data Nadhi Repositories
                     </a>
                   </li>
-                  <li>Discord (coming soon)</li>
+                  <li><a href='https://discord.gg/gMwdfGfnby'>Discord</a></li>
                 </ul>
               </div>
 

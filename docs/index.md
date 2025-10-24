@@ -36,7 +36,7 @@ If you run into issues or have questions:
 
 1. Search through this documentation first
 2. Check existing GitHub Issues
-3. Join our Discord community (coming soon)
+3. Join our [Discord community](https://discord.gg/gMwdfGfnby)
 4. Open a new issue with as much detail as you can
 
 ## 📖 Navigation Tips
