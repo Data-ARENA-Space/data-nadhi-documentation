@@ -4,6 +4,8 @@ The **Data Nadhi Server** is the main entry point for all logs and events sent f
 It validates, enriches, and routes log data into your configured pipelines using **Temporal** for async processing.  
 The system is built to be **stateless**, **heavily cached**, and **fault-tolerant**.
 
+**[Github Repository]**: [data-nadhi-server](https://github.com/Data-ARENA-Space/data-nadhi-server)
+
 ---
 
 ## 🧩 Overview

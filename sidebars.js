@@ -76,7 +76,9 @@ const sidebars = {
           ],
         }
       ],
-    }
+    },
+    'setup',
+    'internal-server-apis'
   ],
 };
 
