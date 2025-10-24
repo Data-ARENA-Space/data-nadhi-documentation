@@ -9,7 +9,7 @@ This doc gives you the high-level view and links to detailed pages for each comp
 
 Data Nadhi is made up of multiple services that can be deployed independently. They work together to ingest, process, and deliver data wherever it needs to go.
 
-![Data Nadhi Architecture](/img/docs/core-architecture.png)
+![Data Nadhi Architecture](/img/docs/core-architecture.svg)
 
 ---
 

@@ -10,7 +10,7 @@ It applies transformations, evaluates conditions, and routes data to downstream 
 This workflow gets triggered as a **child workflow** of `MainWorkflow` on Temporal's **task queue**.  
 It processes logs according to your pipeline config, handling multiple nodes and branching logic while keeping metadata and traceability.
 
-![Transformation Worker](/img/docs/transformation-worker.png)
+![Transformation Worker](/img/docs/transformation-worker.svg)
 
 ---
 

@@ -10,7 +10,7 @@ It gets data from the **TransformationWorkflow** and makes sure everything integ
 This workflow gets triggered as a **child workflow** from the **TransformationWorkflow**.  
 It fetches the **integration targets and connector configs** you need, and sends the data to the destination.
 
-![Destination Worker](/img/docs/destination-worker.png)
+![Destination Worker](/img/docs/destination-worker.svg)
 
 ---
 

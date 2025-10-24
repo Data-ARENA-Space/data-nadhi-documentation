@@ -1,5 +1,5 @@
 # Setup Guide
 
-Documentation coming soon.
+Setup docs are coming soon.
 
-For now, please refer to the [Architecture](/docs/architecture) section.
+For now, check out the [Architecture](/docs/architecture) section to understand how things work.

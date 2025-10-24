@@ -8,7 +8,7 @@ The system is built to be **stateless**, **heavily cached**, and **fault-toleran
 
 ## 🧩 Overview
 
-![Data Nadhi Server](/img/docs/server.png)
+![Data Nadhi Server](/img/docs/server.svg)
 
 ---
 

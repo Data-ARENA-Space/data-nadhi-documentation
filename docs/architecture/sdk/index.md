@@ -9,7 +9,7 @@ It's designed to work smoothly with whatever logging system your language alread
 
 ## Overview
 
-![Data Nadhi SDK](/img/docs/sdk.png)
+![Data Nadhi SDK](/img/docs/sdk.svg)
 
 ---
 

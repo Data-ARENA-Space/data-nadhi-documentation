@@ -10,7 +10,7 @@ It fetches pipeline and workflow configs and then triggers the **TransformationW
 The workflow listens to Temporal's **task queue** and starts whenever a new log or event shows up.  
 It validates required metadata like `organisationId`, `projectId`, and `pipelineId` before moving forward.
 
-![Main Worker](/img/docs/main-worker.png)
+![Main Worker](/img/docs/main-worker.svg)
 
 ---
 
