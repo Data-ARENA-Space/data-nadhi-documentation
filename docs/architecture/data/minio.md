@@ -1,40 +1,40 @@
 # MinIO in Data Nadhi
 
 Data Nadhi uses **MinIO** to store **failed records** and related metadata.  
-MinIO is chosen because it is **S3-compatible**, lightweight, and allows easy migration to AWS S3 in the future.
+We picked MinIO because it's **S3-compatible**, lightweight, and makes it easy to migrate to AWS S3 later if needed.
 
 ---
 
 ## ☁️ Why MinIO?
 
-- **Failure handling:** Stores logs that fail during processing, ensuring no data is lost.  
-- **S3-compatible:** Makes it easy to switch to AWS S3 or other compatible storage if needed.  
-- **Original and transformed data:** Keeps both the original log and the current input at the point of failure.  
-- **Durable storage:** Allows later inspection or reprocessing of failed records.  
+- **Failure handling:** Stores logs that fail during processing so you don't lose data.  
+- **S3-compatible:** Easy to switch to AWS S3 or other compatible storage down the line.  
+- **Original and transformed data:** Keeps both the original log and what the data looked like when it failed.  
+- **Durable storage:** You can inspect or reprocess failed records later.  
 
-> 💡 *MinIO acts as a “safety net” for the platform, ensuring failed data is stored reliably for investigation or retries.*
+> 💡 *MinIO acts as a "safety net" for the platform - makes sure failed data is stored reliably so you can investigate or retry later.*
 
 ---
 
 ## 🗂️ Failure Log Schema
 
-Each failure log is stored as a **JSON object** in MinIO, organized using a folder structure based on organisation, project, pipeline, and message IDs.  
+Each failure log is stored as a **JSON object** in MinIO. They're organized in folders based on org, project, pipeline, and message IDs.  
 
 ### Fields:
 
-- `timestamp` – ISO timestamp of the failure.  
-- `organisationId` – ID of the organisation that owns the pipeline.  
-- `projectId` – ID of the project where the pipeline belongs.  
-- `pipelineId` – ID of the pipeline where the failure occurred.  
-- `messageId` – Unique ID of the log message.  
-- `originalInput` – Original log data received by the system.  
-- `currentInput` – Input at the point of failure (after partial transformations).  
-- `error` – Object containing:
+- `timestamp` – ISO timestamp of when it failed.  
+- `organisationId` – ID of the org that owns the pipeline.  
+- `projectId` – ID of the project the pipeline is in.  
+- `pipelineId` – ID of the pipeline where the failure happened.  
+- `messageId` – Unique ID for the log message.  
+- `originalInput` – The original log data the system got.  
+- `currentInput` – What the data looked like when it failed (after any partial transformations).  
+- `error` – Object with:
   - `message` – Error message.  
-  - `type` – Exception type.  
+  - `type` – What type of exception it was.  
   - `stack` – Stack trace.  
-  - `description` – Human-readable description of the error.  
-- `context` *(optional)* – Extra context added during failure handling.  
+  - `description` – Human-readable description of what went wrong.  
+- `context` *(optional)* – Any extra context added during failure handling.
 
 ---
 
@@ -50,9 +50,9 @@ Each failure log is stored as a **JSON object** in MinIO, organized using a fold
 TransformationWorkflow-transform-20251023120000123456.json
 ```
 
-**Why this structure works:**  
-- Organizes failed logs **by hierarchy**, making it easy to find records per organisation, project, and pipeline.  
-- Keeps **timestamps and activity names** in filenames for versioning and quick inspection.  
-- Stores both **original and current input**, ensuring full traceability of failures.  
+**Why this works:**  
+- Organizes failed logs **by hierarchy** - makes it easy to find records by org, project, and pipeline.  
+- Keeps **timestamps and activity names** in the filename so you can version and inspect things quickly.  
+- Stores both the **original and current input** so you have full traceability of what failed.  
 
-> 💡 *This setup ensures that all failures are durable, easily accessible, and ready for reprocessing or debugging.*
+> 💡 *This setup makes sure all failures are durable, easy to find, and ready for reprocessing or debugging.*

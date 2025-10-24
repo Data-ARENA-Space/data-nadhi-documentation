@@ -2,26 +2,26 @@
 
 > **Direct. Transform. Deliver.**
 
-Official documentation site for Data Nadhi - an open-source data pipeline platform that simplifies data ingestion, transformation, and delivery.
+Docs for Data Nadhi - an open-source data pipeline platform that handles your data from logs to destination.
 
 ## 🌊 About Data Nadhi
 
-Data Nadhi is a comprehensive data pipeline platform designed to handle the complete lifecycle of data processing:
+Data Nadhi handles the complete pipeline flow starting from your application logs all the way to any destination you want:
 
-- **Direct**: Streamlined data ingestion from application logs and various sources
-- **Transform**: Powerful, flexible data transformation pipelines using Temporal workflows
-- **Deliver**: Reliable data delivery to multiple destinations with built-in monitoring
+- **Direct**: Get data from your application logs and various sources into the system
+- **Transform**: Apply flexible transformations to your data using Temporal workflows
+- **Deliver**: Send the processed data to multiple destinations reliably, with built-in monitoring
 
-This documentation provides comprehensive guides for understanding, setting up, and contributing to the Data Nadhi ecosystem.
+These docs will help you understand how Data Nadhi works, get it set up, and contribute if you want to.
 
 ## 📚 What's Inside
 
-This documentation site is built with [Docusaurus](https://docusaurus.io/) and includes:
+Built with [Docusaurus](https://docusaurus.io/), this site includes:
 
-- **Architecture Documentation**: Detailed system design and component interactions
-- **Setup Guides**: Step-by-step instructions for local development
-- **API References**: Comprehensive API documentation for all services
-- **Integration Guides**: How to integrate Data Nadhi into your applications
+- **Architecture Documentation**: Detailed breakdown of how the system is designed and how components interact with each other
+- **Setup Guides**: Step-by-step instructions to get Data Nadhi running locally
+- **API References**: Complete API documentation for the services
+- **Integration Guides**: How to integrate Data Nadhi into your existing applications (Once everything is up in docker)
 
 ## 🚀 Quick Start
 
@@ -38,70 +38,70 @@ npm install
 
 ### Development
 
-Start the development server:
+Start the dev server:
 
 ```bash
 npm start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+This starts a local server and opens a browser window. Most changes will show up live without needing to restart.
 
 ### Build
 
-Generate static content for production:
+Build the static site for production:
 
 ```bash
 npm run build
 ```
 
-This command generates static content into the `build` directory.
+This generates all the static content and puts it in the `build` directory.
 
 ### Deployment
 
-The documentation is deployed to Cloudflare Pages. The build output is automatically deployed on push to the main branch.
+The docs are hosted on Cloudflare Pages. Any push to the main branch automatically triggers a deployment.
 
 ## 🏗️ Data Nadhi Repositories
 
-Data Nadhi is composed of multiple repositories, each serving a specific purpose:
+Data Nadhi is split across multiple repos, each handling a specific part:
 
 ### Core Services
 
 - **[data-nadhi-server](https://github.com/Data-ARENA-Space/data-nadhi-server)**  
-  Main API server handling authentication, project management, and pipeline orchestration
+  The API server that handles authentication for the request from SDK and pushing to temporal
 
 - **[data-nadhi-internal-server](https://github.com/Data-ARENA-Space/data-nadhi-internal-server)**  
-  Internal service for log ingestion and processing from client applications
+  Internal service that temporarily replaces the UI that will help with creating pipeline nodes and other entities
 
 - **[data-nadhi-temporal-worker](https://github.com/Data-ARENA-Space/data-nadhi-temporal-worker)**  
-  Temporal worker service executing data transformation workflows and delivery jobs
+  This is a set of 3 workers, that are responsible for the code data pipeline traversal with the log data
 
 ### SDKs & Tools
 
 - **[data-nadhi-sdk](https://github.com/Data-ARENA-Space/data-nadhi-sdk)**  
-  JavaScript/TypeScript SDK for integrating Data Nadhi into applications
+  Python SDK for integrating Data Nadhi into your applications - The logging SDK
 
 - **[data-nadhi-dev](https://github.com/Data-ARENA-Space/data-nadhi-dev)**  
-  Development environment setup with Docker Compose, including all required infrastructure
+  Development environment setup with Docker Compose, includes all the infrastructure you need in your local
 
 ### Documentation
 
 - **[data-nadhi-documentation](https://github.com/Data-ARENA-Space/data-nadhi-documentation)** (this repo)  
-  Official documentation site with architecture guides, setup instructions, and API references
+  This documentation site with architecture guides, setup instructions, and API references
 
 ## 🤝 Contributing
 
-We welcome contributions! Here's how you can help:
+Contributions are always welcome! Here's how you can help:
 
-1. **Documentation**: Found a typo or want to improve explanations? Edit the docs directly.
-2. **Examples**: Add more examples and use cases to help others.
-3. **Issues**: Report bugs or suggest improvements via GitHub Issues.
+1. **Documentation**: Found a typo or something that could be explained better? Go ahead and edit it.
+2. **Examples**: Add more examples and use cases that could help others.
+3. **Issues**: Report bugs or suggest improvements through GitHub Issues.
 
 ### Making Changes
 
-1. Fork this repository
+1. Fork this repo
 2. Create a branch: `git checkout -b feature/your-feature-name`
 3. Make your changes
-4. Test locally: `npm start`
+4. Test locally with `npm start`
 5. Submit a pull request
 
 ## 📝 Documentation Structure
@@ -120,20 +120,16 @@ docs/
 
 ## 🔗 Links
 
-- **Live Documentation**: [https://docs.datanad.com](https://docs.datanad.com)
+- **Live Documentation**: [https://docs.datanadhi.com](https://docs.datanadhi.com)
 - **GitHub Organization**: [Data-ARENA-Space](https://github.com/Data-ARENA-Space)
-- **Main Website**: Coming soon
+- **Main Website**: [https://datanadhi.com](https://datanadhi.com)
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the [GNU Affero General Public License v3.0](LICENSE).
 
 ## 💬 Community
 
 - **GitHub Discussions**: [Coming soon]
 - **Discord**: [Coming soon]
 - **Issues**: [GitHub Issues](https://github.com/Data-ARENA-Space/data-nadhi-documentation/issues)
-
----
-
-Built with ❤️ by the Data ARENA Space team# data-nadhi-documentation

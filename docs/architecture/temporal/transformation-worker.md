@@ -1,14 +1,14 @@
 # 🔄 Transformation Temporal Workflow
 
-The **TransformationWorkflow** in Data Nadhi is responsible for processing logs through the user-defined pipeline nodes.  
+The **TransformationWorkflow** in Data Nadhi processes logs through your user-defined pipeline nodes.  
 It applies transformations, evaluates conditions, and routes data to downstream destinations via **DestinationWorkflow**.
 
 ---
 
 ## ⚙️ Overview
 
-The workflow is triggered as a **child workflow** of `MainWorkflow` on Temporal’s **task queue**.  
-It processes logs according to the pipeline configuration, handling multiple nodes and branching logic while maintaining metadata and traceability.
+This workflow gets triggered as a **child workflow** of `MainWorkflow` on Temporal's **task queue**.  
+It processes logs according to your pipeline config, handling multiple nodes and branching logic while keeping metadata and traceability.
 
 ![Transformation Worker](/img/docs/transformation-worker.png)
 
@@ -17,11 +17,11 @@ It processes logs according to the pipeline configuration, handling multiple nod
 ## 🧩 Workflow Steps
 
 ### 1. Receive Input
-Input payload contains:
+Input payload has:
 - **Pipeline Configuration**: All nodes and their connections  
 - **Log Data**: The event or log to process  
-- **Start Node ID**: Node where traversal begins  
-- **Context (`ctx`)**: Metadata for tracking (organisation, project, pipeline, message IDs)  
+- **Start Node ID**: Node where traversal starts  
+- **Context (`ctx`)**: Metadata for tracking (org, project, pipeline, message IDs)
 
 ---
 
@@ -60,11 +60,11 @@ Input payload contains:
 
 ## 🚨 Failure Handling with MinIO
 
-All activity failures are logged to **MinIO** to ensure traceability without halting the workflow.  
+All activity failures get logged to **MinIO** to keep traceability without stopping the workflow.  
 The logs include:
 - Exception type, message, and stack trace  
 - Original input data and current workflow context  
-- Node ID, organisation, project, pipeline, and message IDs
+- Node ID, org, project, pipeline, and message IDs
 
 ---
 
@@ -90,9 +90,6 @@ The `transform` activity currently supports JSON-specific operations: **`add_key
 **Example Node Config:**
 ```json
 {
-  "_id": {
-    "$oid": "68f7230220efbeeae7845199"
-  },
   "nodeConfig": {
     "name": "Guest User Limitations",
     "type": "transformation",
@@ -132,9 +129,6 @@ The `filters` activity is used for **branching and conditional routing** between
 **Example Node Config:**
 ```json
 {
-  "_id": {
-    "$oid": "68f7230220efbeeae7845196"
-  },
   "nodeConfig": {
     "name": "Validate Input Data",
     "type": "condition-branching",
@@ -238,7 +232,7 @@ The **TransformationWorkflow** handles detailed node-level processing of logs:
 - Processes **transformation nodes** (`add_key`, `remove_key`) and other JSON operations.  
 - Applies **filters and branching** for conditional workflow execution.  
 - Triggers **DestinationWorkflow** for end nodes.  
-- Maintains **outputs per node** for auditing and traceability.  
-- Logs activity-level failures to **MinIO** without halting other nodes.  
+- Keeps **outputs per node** for auditing and traceability.  
+- Logs activity-level failures to **MinIO** without stopping other nodes.  
 
-This design ensures **modular, fault-tolerant processing**, allowing high-throughput log transformations with complete observability.
+This design gives you **modular, fault-tolerant processing** that allows high-throughput log transformations with complete observability.

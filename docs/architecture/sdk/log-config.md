@@ -1,8 +1,8 @@
 # Log Config - SDK
 
-Log Config is one of the primary drivers of what flows into the Data Nadhi system and what gets written out as log in the user's standard output.
+The Log Config controls what flows into Data Nadhi and what gets printed to your standard output.
 
-It defines **rules and actions** — where each rule decides what happens to a specific log entry (e.g., print to stdout, send to pipeline).
+It defines **rules and actions** — each rule decides what happens to a specific log entry (e.g., print to stdout, send to a pipeline).
 
 ---
 
@@ -31,40 +31,40 @@ rules:
     - test-pipeline-2
 ```
 
-The log config is thought of as a list of rule–action pairs, each able to take its own decisions.
+Think of the log config as a list of rule–action pairs — each one can make its own decision.
 
-There is a top-level key called rules so that in future we can extend the configuration (for global settings) with minimal changes.
+There's a top-level key called `rules` so we can extend the config later (global settings) with minimal changes.
 
 ---
 
 ## Parts of a Rule
 
 ### `name`
-- Used only for readability and easier identification.
-- Does not affect behavior.
+- Just for readability and easier identification.
+- Doesn't affect behavior.
 
 ### `conditions`
 - Define when the rule should match.
 - Each condition has:
-    - **`key`:** Dot-separated path to a field in log_data
-    - **`type`:** Type of comparison (exact, partial, or regex)
-    - **`value`:** The value to match
+    - **`key`:** Dot-separated path to a field in `log_data`
+    - **`type`:** Comparison type (`exact`, `partial`, or `regex`)
+    - **`value`:** The value to match against
 - **Types:**
-    - **`exact`** → Matches only if value is exactly equal.
-    - **`partial`** → Matches if value is a substring.
-    - **`regex`** → Matches using a regular expression.
-- By default **all conditions must pass** for a rule to be considered a match.
+    - **`exact`** → Value must match exactly
+    - **`partial`** → Value is a substring
+    - **`regex`** → Match using a regular expression
+- By default **all conditions must pass** for the rule to match.
 
 ### `any_condition_match`
 - When `true`, any one condition passing is enough.
-- Defaults to `false` (i.e., “AND” behavior).
+- Defaults to `false` (AND behavior).
 
 ### `stdout`
 - One of the two available actions.
-- Decides if the log should be written to the standard output.
+- Decides if the log should be written to stdout.
 
 ### `pipelines`
-- Second available action.
+- The second available action.
 - A list of pipeline codes to trigger when the rule passes.
 - If omitted, no pipelines are triggered for that rule.
 
@@ -76,7 +76,7 @@ There is a top-level key called rules so that in future we can extend the config
 - If any rule passes with `stdout: true`, the log will be printed
 - Duplicate pipelines across multiple matching rules trigger only once
 - Keys in conditions are assumed to be strings
-- Multiple config files can exist in the config directory — all rules are automatically combined and evaluated
+- You can have multiple config files in the config directory — all rules are automatically combined and evaluated
 
 ---
 
